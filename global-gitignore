@@ -1,0 +1,6 @@
+.idea
+taskfile.yml
+coverage.sh
+tarpaulage.sh
+notes.md
+typos.toml
