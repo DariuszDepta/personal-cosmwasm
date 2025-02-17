@@ -15,3 +15,7 @@ that should be stored in the user's home directory.
 In every [CosmWasm] repository, a symbolic link should be created that points
 to the configuration files in this repository, all in lowercase,
 exactly as specified in the global `.gitignore` file.
+
+This ensures that my customized configuration files are globally ignored by Git,
+preventing accidental commits to any [CosmWasm] repository. At the same time,
+I can continue using my preferred tools seamlessly in my daily workflow.
