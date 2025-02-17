@@ -230,7 +230,7 @@ tasks:
   tov:
     desc: Runs code coverage using tarpaulin
     cmds:
-      - cmd: ./Tarpaulage.sh
+      - cmd: ./tarpaulage.sh
 
   lov:
     desc: Runs code coverage using llvm-cov
