@@ -12,6 +12,12 @@ for use in [CosmWasm] projects without needing to store them in their repositori
 The [global-gitignore](./global-gitignore) file contains global Git configuration
 that should be stored in the user's home directory.
 
+Do not forget to configure Git:
+
+```shell
+$ git config --global core.excludesFile '~/.gitignore'
+```
+
 In every [CosmWasm] repository, a symbolic link should be created that points
 to the configuration files in this repository, all in lowercase,
 exactly as specified in the global `.gitignore` file.
