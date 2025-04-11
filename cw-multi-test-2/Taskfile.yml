@@ -151,19 +151,16 @@ tasks:
   clippy-all:
     desc: Runs clippy with all features enabled
     cmds:
-      #      - cmd: cargo +stable clippy --all-targets --all-features
       - cmd: cargo +nightly clippy --all-targets --all-features
 
   clippy-default:
     desc: Runs clippy with default features enabled
     cmds:
-      #      - cmd: cargo +stable clippy --all-targets
       - cmd: cargo +nightly clippy --all-targets
 
   clippy-no-default:
     desc: Runs clippy without default features
     cmds:
-      #      - cmd: cargo +stable clippy --no-default-features --all-targets
       - cmd: cargo +nightly clippy --no-default-features --all-targets
 
   clippy-1-1:
@@ -366,14 +363,20 @@ tasks:
     cmds:
       - cmd: cargo +1.78.0-x86_64-unknown-linux-gnu test
 
-  build-all-feature-combinations:
+  all-features:
+    cmds:
+      - task: build-all-features
+      - task: clippy-all-features
+      - task: test-all-features
+
+  build-all-features:
     cmds:
       - cmd: cargo +stable hack build --feature-powerset
 
-  test-all-feature-combinations:
-    cmds:
-      - cmd: cargo +stable hack test --feature-powerset
-
-  clippy-all-feature-combinations:
+  clippy-all-features:
     cmds:
       - cmd: cargo +stable hack clippy --feature-powerset
+
+  test-all-features:
+    cmds:
+      - cmd: cargo +stable hack test --feature-powerset
