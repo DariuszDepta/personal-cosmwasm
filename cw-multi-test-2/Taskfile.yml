@@ -365,9 +365,7 @@ tasks:
 
   all-features:
     cmds:
-      - task: build-all-features
-      - task: clippy-all-features
-      - task: test-all-features
+      - cmd: cargo +stable hack build --feature-powerset && cargo +stable hack clippy --feature-powerset && cargo +stable hack test --feature-powerset
 
   build-all-features:
     cmds:
