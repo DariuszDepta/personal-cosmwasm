@@ -9,6 +9,16 @@ tasks:
     cmds:
       - cmd: cargo +stable build
 
+  build-min:
+    desc: Equivalent of the build_minimal job in Circle CI
+    cmds:
+      - cmd: cargo clean
+      - cmd: rm -rf Cargo.lock
+      - cmd: cargo update -p num-bigint
+      - cmd: cargo +nightly build -Zminimal-versions --all-features
+      - cmd: rm -rf Cargo.lock
+      - cmd: cargo +stable build
+
   clean:
     desc: Cleans target output
     cmds:
